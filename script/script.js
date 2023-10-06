@@ -1,3 +1,10 @@
+loading = document.getElementById("loading");
+
+window.addEventListener("load", () => {
+  loading.classList.add("hidden");
+  loading.classList.remove("flex");
+});
+
 const button = document.getElementById("download-pdf");
 
 button.addEventListener("click", () => {
@@ -335,7 +342,12 @@ function addEducation() {
   `;
 
   educationList.innerHTML += `
-    <li id=${education.substr(7, 7).replace(" ", "")}  class="flex place-items-center justify-between w-full bg-white p-2 rounded shadow">
+    <li id=${education
+      .substr(7, 7)
+      .replace(
+        " ",
+        ""
+      )}  class="flex place-items-center justify-between w-full bg-white p-2 rounded shadow">
       <div class="w-2/3" >
         <span class="w-1/2">${education}</span>
         <span class="w-1/2">${ecole}</span>
@@ -352,7 +364,6 @@ function addEducation() {
   document.getElementById("dateF").value = "";
   showToas("Education ajoutée avec succès", "green");
 }
-
 
 function uploadImage(event) {
   const file = event.target.files[0];
